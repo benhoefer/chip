@@ -43,3 +43,45 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'haml-rails'
+gem 'high_voltage'
+gem 'pg'
+gem 'pundit'
+gem 'simple_form'
+
+group :development do
+  gem 'better_errors'
+  gem 'foreman'
+  gem 'html2haml'
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_apps_testing'
+  gem 'rails_layout'
+  gem 'spring-commands-rspec'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'pry-rescue'
+  gem 'rspec-rails'
+  gem 'thin'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+end
+
