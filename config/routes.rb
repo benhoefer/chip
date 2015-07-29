@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+
   devise_for :users
+
+  authenticated :user do
+    root to: 'visitors#home', as: :authenticated_root
+  end
+  unauthenticated do
+    root to: 'visitors#index'
+  end
+
 end
