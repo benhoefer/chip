@@ -1,0 +1,11 @@
+- cancel ||= nil
+- post   ||= nil
+#header.flex
+  - if not cancel.nil?
+    = link_to "Cancel", cancel, class: "btn btn-link"
+  //= button_to "Cancel", kids_path, method: :get, class: "btn btn-link"
+  #title.flex-item-auto= title
+  - if not post.nil?
+    %button.btn.btn-link{type: "submit", data: {disable_with: "Posting..."}}
+      #{post}
+      %i.ion-checkmark

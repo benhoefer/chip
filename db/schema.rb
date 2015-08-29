@@ -11,10 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723171014) do
+ActiveRecord::Schema.define(version: 20150809181544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "kid_id"
+    t.string   "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "approval_required", default: true
+    t.integer  "sort_order"
+    t.boolean  "show",              default: true
+    t.float    "cash_reward",       default: 0.0
+    t.integer  "point_reward",      default: 0
+    t.integer  "frequency"
+    t.boolean  "sun"
+    t.boolean  "mon"
+    t.boolean  "tue"
+    t.boolean  "wed"
+    t.boolean  "thur"
+    t.boolean  "fri"
+    t.boolean  "sat"
+    t.date     "start_on"
+    t.string   "icon"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "assignments", ["kid_id"], name: "index_assignments_on_kid_id", using: :btree
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
+
+  create_table "kachings", force: :cascade do |t|
+    t.integer  "assignment_id"
+    t.integer  "kid_id"
+    t.integer  "user_id"
+    t.boolean  "approved",      default: true
+    t.integer  "cash_reward"
+    t.float    "point_reward"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "kachings", ["assignment_id"], name: "index_kachings_on_assignment_id", using: :btree
+  add_index "kachings", ["kid_id"], name: "index_kachings_on_kid_id", using: :btree
+  add_index "kachings", ["user_id"], name: "index_kachings_on_user_id", using: :btree
+
+  create_table "kids", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "pin"
+    t.string   "icon"
+    t.integer  "cash"
+    t.integer  "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "kids", ["user_id"], name: "index_kids_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

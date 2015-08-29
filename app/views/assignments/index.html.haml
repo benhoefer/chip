@@ -1,0 +1,18 @@
+%h3 Chores
+- @assignments.each do |a|
+  #assignments.flex
+    .flex-item-auto= a.name
+    %div= a.kid.name
+    .subtle= a.frequency
+    - if a.cash_reward!=0
+      %div $#{a.cash_reward}
+    - if a.point_reward!=0
+      %div #{a.point_reward} points
+    %div= a.icon
+    %div= link_to 'Show', a
+    %div= link_to 'Edit', edit_assignment_path(a)
+    %div= link_to 'Destroy', a, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Assignment', new_kid_assignment_path(@kid)

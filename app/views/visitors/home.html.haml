@@ -1,1 +1,10 @@
 %h4 home
+
+- if parent_signed_in?
+  %h4 Parent signed in
+- elsif current_kid
+  %h4 Kid #{current_kid.name} signed in
+- else
+  = button_to "parent", parent_sign_in_path
+  - current_user.kids.each do |k|
+    = button_to k.name, kid_sign_in_path(k)

@@ -1,0 +1,15 @@
+- if parent_signed_in?
+  = render 'parent'
+- elsif current_kid
+  = render 'kid'
+- else
+  %ul.list-group
+    %li.list-group-item
+      = bootstrap_form_tag(url: dashboard_sign_in_user2_path)  do |f|
+        = f.submit "parent"
+    - current_user.kids.each do |k|
+      %li.list-group-item
+        = bootstrap_form_tag(url: dashboard_sign_in_user2_path) do |f|
+          = hidden_field_tag(:kid_id, k.id)
+          = f.submit k.name
+

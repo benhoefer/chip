@@ -1,0 +1,13 @@
+= simple_form_for(@kaching) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :assignment_id
+    = f.input :kid_id
+    = f.input :user_id
+    = f.input :approved
+    = f.input :cash_reward
+    = f.input :point_reward
+
+  .form-actions
+    = f.button :submit

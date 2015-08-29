@@ -1,0 +1,63 @@
+%p#notice= notice
+
+%p
+  %b Kid:
+  = @assignment.kid_id
+%p
+  %b User:
+  = @assignment.user_id
+%p
+  %b Name:
+  = @assignment.name
+%p
+  %b Description:
+  = @assignment.description
+%p
+  %b Approval required:
+  = @assignment.approval_required
+%p
+  %b Sort order:
+  = @assignment.sort_order
+%p
+  %b Show:
+  = @assignment.show
+%p
+  %b Cash reward:
+  = @assignment.cash_reward
+%p
+  %b Point reward:
+  = @assignment.point_reward
+%p
+  %b Frequency
+  = @assignment.frequency
+%p
+  %b Sun:
+  = @assignment.sun
+%p
+  %b Mon:
+  = @assignment.mon
+%p
+  %b Tue:
+  = @assignment.tue
+%p
+  %b Wed:
+  = @assignment.wed
+%p
+  %b Thur:
+  = @assignment.thur
+%p
+  %b Fri:
+  = @assignment.fri
+%p
+  %b Sat:
+  = @assignment.sat
+%p
+  %b Start on:
+  = @assignment.start_on
+%p
+  %b Icon:
+  = @assignment.icon
+
+= link_to 'Edit', edit_assignment_path(@assignment)
+\|
+= link_to 'Back', assignments_path

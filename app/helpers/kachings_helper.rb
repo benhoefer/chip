@@ -1,0 +1,2 @@
+module KachingsHelper
+end

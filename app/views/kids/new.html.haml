@@ -1,0 +1,10 @@
+= bootstrap_form_for(@kid) do |f|
+  #header.flex
+    = link_to "Cancel", kids_path, class: "btn btn-link"
+    //= button_to "Cancel", kids_path, method: :get, class: "btn btn-link"
+    #title.flex-item-auto make a kid
+    %button.btn.btn-link{type: "submit", data: {disable_with: "Posting..."}}
+      Save
+      %i.ion-checkmark
+
+  #body= render 'form', f: f

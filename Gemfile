@@ -17,7 +17,7 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
 gem 'pundit'
-gem 'simple_form'
+gem 'bootstrap_form'
 group :development do
   gem 'better_errors'
   gem 'foreman'

@@ -1,0 +1,12 @@
+= render 'header', title: @kid.name
+
+- if parent_signed_in?
+  %ul.nav.nav-pills.nav-stacked
+    %li= link_to "Chores", kid_assignments_path(@kid)
+    %li= link_to "Completed Tasks", kid_kachings_path(@kid)
+    %li= link_to "Edit", edit_kid_path(@kid)
+
+- elsif current_kid
+  %h4 Chores for today
+  - @kid.assignments.each do |a|
+    = render a

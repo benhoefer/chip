@@ -12,25 +12,6 @@ img {
   font-size: inherit;
   }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
-// to make views framework-neutral
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.form {
-  @extend .col-md-6;
-  }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
-  }
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -39,10 +20,6 @@ main {
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
-  }
-section {
-  @extend .row;
-  margin-top: 20px;
   }
 
 // Styles for form views
@@ -79,4 +56,55 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.flex-nowrap {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-item-auto {
+  flex: auto;
+  width: 0;
+}
+
+#box {
+  background-color: white;
+}
+
+#body {
+  padding: 5px 5px 0 5px;
+}
+
+#header {
+  @extend .text-center;
+  align-items: center;
+  background-color: black;
+  color: white;
+
+  line-height: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  vertical-align: center;
+  font-size: 1.2em;
+
+  .btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  button.btn {
+    height: 50px;
+  }
+
+  .btn:hover { background-color: #bbb; }
+
 }

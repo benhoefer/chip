@@ -1,0 +1,20 @@
+= render 'header', title: 'Kids'
+%ul.nav.nav-pills.nav-stacked
+  - @kids.each do |kid|
+    %li
+      .flex
+        .flex-item-auto= kid.name
+        .cash $#{kid.cash || "0.00"}
+        .points #{kid.points || 0} points
+        .btn-group
+          %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            Do
+            %span.caret
+          %ul.dropdown-menu
+            %li= link_to "new chore", new_kid_assignment_path(kid)
+            %li= link_to "verify chores", kid_kachings_path(kid)
+            %li= link_to "edit", edit_kid_path(kid)
+            %li.divider{:role => "separator"}
+            %li
+              %a{:href => "#"} Separated link
+  %li= link_to 'New Kid', new_kid_path

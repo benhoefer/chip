@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Assignment:
+  = @kaching.assignment_id
+%p
+  %b Kid:
+  = @kaching.kid_id
+%p
+  %b User:
+  = @kaching.user_id
+%p
+  %b Approved:
+  = @kaching.approved
+%p
+  %b Cash reward:
+  = @kaching.cash_reward
+%p
+  %b Point reward:
+  = @kaching.point_reward
+
+= link_to 'Edit', edit_kaching_path(@kaching)
+\|
+= link_to 'Back', kachings_path

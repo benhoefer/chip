@@ -1,0 +1,31 @@
+%h1 Listing kachings
+
+%table
+  %thead
+    %tr
+      %th Assignment
+      %th Kid
+      %th User
+      %th Approved
+      %th Cash reward
+      %th Point reward
+      %th
+      %th
+      %th
+
+  %tbody
+    - @kachings.each do |kaching|
+      %tr
+        %td= kaching.assignment_id
+        %td= kaching.kid_id
+        %td= kaching.user_id
+        %td= kaching.approved
+        %td= kaching.cash_reward
+        %td= kaching.point_reward
+        %td= link_to 'Show', kaching
+        %td= link_to 'Edit', edit_kaching_path(kaching)
+        %td= link_to 'Destroy', kaching, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Kaching', new_kaching_path
