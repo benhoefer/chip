@@ -25,6 +25,7 @@ class KachingsController < ApplicationController
   # POST /kachings.json
   def create
     @kaching = Kaching.new(kaching_params)
+    @kaching.user = current_user
 
     respond_to do |format|
       if @kaching.save
@@ -69,6 +70,6 @@ class KachingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kaching_params
-      params.require(:kaching).permit(:assignment_id, :kid_id, :user_id, :approved, :cash_reward, :point_reward)
+      params.require(:kaching).permit(:assignment_id, :kid_id, :user_id, :completed_on, :approved, :cash_reward, :point_reward)
     end
 end

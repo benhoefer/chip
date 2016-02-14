@@ -15,7 +15,7 @@ class CreateAssignments < ActiveRecord::Migration
       t.boolean :mon
       t.boolean :tue
       t.boolean :wed
-      t.boolean :thur
+      t.boolean :thu
       t.boolean :fri
       t.boolean :sat
       t.date :start_on

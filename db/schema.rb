@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809181544) do
+ActiveRecord::Schema.define(version: 20150902002757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150809181544) do
     t.boolean  "mon"
     t.boolean  "tue"
     t.boolean  "wed"
-    t.boolean  "thur"
+    t.boolean  "thu"
     t.boolean  "fri"
     t.boolean  "sat"
     t.date     "start_on"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150809181544) do
     t.float    "point_reward"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.date     "completed_on"
   end
 
   add_index "kachings", ["assignment_id"], name: "index_kachings_on_assignment_id", using: :btree
